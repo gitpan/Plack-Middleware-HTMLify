@@ -1,12 +1,11 @@
 package Plack::Middleware::HTMLify;
 BEGIN {
-  $Plack::Middleware::HTMLify::VERSION = '0.1.0';
+  $Plack::Middleware::HTMLify::VERSION = '0.1.1';
 }
 use strict;
 use warnings;
 use parent qw( Plack::Middleware );
 
-use Data::Dump qw(dump);
 use Plack::Util;
 use Plack::Util::Accessor
     qw( set_doctype set_head set_body_start set_body_end );
@@ -74,11 +73,11 @@ sub call {
 
 =head1 NAME
 
-Plack::Middleware::HTMLify - Plack::Middleware::Deflater - Transform a non-html page into html.  
+Plack::Middleware::HTMLify - Transform a non-html page into html.  
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -102,8 +101,10 @@ version 0.1.0
 Plack::Middleware::HTMLify is meant to be used to transform non-html web content
 into html.
 
-The ideas is that some content, such as "text/plain", you may want transformed
-into HTML for use with other middleware.
+Use case:
+On CPAN, the 'source' link is delivered as 'text/plain'.  If you wanted to do
+some post-processing of this page to add syntax highlighting you would need the
+page to be set as 'text/html' and have some basic HTML formatting.
 
 =head1 SEE ALSO
 
@@ -126,4 +127,4 @@ the same terms as the Perl 5 programming language system itself.
 __END__
 
 
-# ABSTRACT: Plack::Middleware::Deflater - Transform a non-html page into html.  
+# ABSTRACT: Transform a non-html page into html.  

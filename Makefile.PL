@@ -9,9 +9,10 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Plack::Middleware::Deflater - Transform a non-html page into html.  ',
+  'ABSTRACT' => 'Transform a non-html page into html.  ',
   'AUTHOR' => 'Mark Jubenville <ioncache@gmail.com>',
   'BUILD_REQUIRES' => {
+    'Data::Dump' => '0',
     'English' => '0',
     'Module::Build' => '0.3601',
     'Plack::Builder' => '0',
@@ -27,13 +28,12 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Plack::Middleware::HTMLify',
   'PREREQ_PM' => {
-    'Data::Dump' => '0',
     'Plack::Middleware' => '0',
     'Plack::Util' => '0',
     'Plack::Util::Accessor' => '0',
     'parent' => '0'
   },
-  'VERSION' => '0.1.0',
+  'VERSION' => '0.1.1',
   'test' => {
     'TESTS' => 't/*.t'
   }
